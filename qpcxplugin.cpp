@@ -47,7 +47,10 @@ QImageIOPlugin::Capabilities QPcxPlugin::capabilities(
     if (format == "dcx")
         return Capabilities(CanRead|CanReadIncremental);
 
-    return false;
+    Capabilities cap;
+    if (device->isReadable() && QPcxHandler::canRead(device))
+        cap |= CanRead;
+    return cap;
 }
 
 QImageIOHandler *QPcxPlugin::create(
