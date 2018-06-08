@@ -427,7 +427,7 @@ bool QPcxHandler::readPCX(QByteArray data, QImage *image)
 }
 
 QPcxHandler::QPcxHandler()
-    :m_numImages(0), m_currentImageNo(0)
+    :m_currentImageNo(0), m_numImages(0)
 {
 }
 
