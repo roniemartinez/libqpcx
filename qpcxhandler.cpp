@@ -72,9 +72,12 @@ bool QPcxHandler::readPCX(QByteArray data, QImage *image)
         colorMap.append(byte);
     }
 
+    // https://www.fileformat.info/format/pcx/egff.htm : Reserved1
+    // is not currently used and should have a value of 00h. Older
+    // versions of PCX used this field for file identification or
+    // to hold the mode value of the display screen on which the 
+    // PCX image was created.
     input >> reserved;
-    if (reserved != 0)
-        return false;
 
     //observed that pcx file format was badly designed since
     //the number of color planes was placed here and not before the
