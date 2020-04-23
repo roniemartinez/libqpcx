@@ -35,3 +35,24 @@ CONTRIBUTE
 	If you have an existing PCX/DCX file. Feel free to send me an email at ronmarti18@gmail.com
 	
 	If you want to contribute to the code, just fork the project and pull requests
+
+
+BUILD ON WINDOWS
+
+````
+mkdir build
+cd build
+cmake -DCMAKE_PREFIX_PATH="C:/Qt/Qt-5.14.1-installer/5.14.2/msvc2017_64/bin" ..
+````
+
+open the folder in your favorite IDE and build it.
+
+
+BUILD ON LINUX
+
+````
+mkdir build
+cd build
+cmake ..
+make
+````
